@@ -36,3 +36,16 @@ Distributed under the free software license Apache 2.0 License http://www.apache
     author = "Alexandros Andre Chaaraoui and Pau Climent-Pérez and Francisco Flórez-Revuelta",
   }
 ```
+
+Authors
+=======
+
+Alexandros Andre Chaaraoui
+Domotics and Ambient Intelligence Group
+Department of Computer Technology
+University of Alicante
+alexandros@dtic.ua.es
+www.alexandrosandre.com
+
+Francisco Flórez-Revuelta
+
