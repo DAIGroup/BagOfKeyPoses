@@ -40,20 +40,19 @@ Distributed under the free software license Apache 2.0 License http://www.apache
 Authors
 =======
 
-_Alexandros Andre Chaaraoui_
-Domotics and Ambient Intelligence Group
-Department of Computer Technology
-University of Alicante
-alexandros [AT] dtic [DOT] ua [DOT] es
-www.alexandrosandre.com
+*_Alexandros Andre Chaaraoui_*  
+Department of Computer Technology  
+University of Alicante  
+alexandros [AT] dtic [DOT] ua [DOT] es  
+www.alexandrosandre.com  
 
-_Francisco Flórez-Revuelta_
-Faculty of Science, Engineering and Computing
-Kingston University 
-F [DOT] Florez [AT] kingston [DOT] ac [DOT] uk
-http://www.dtic.ua.es/~florez/
+*_Francisco Flórez-Revuelta_*  
+Faculty of Science, Engineering and Computing  
+Kingston University   
+F [DOT] Florez [AT] kingston [DOT] ac [DOT] uk  
+http://www.dtic.ua.es/~florez/  
 
-_Pau Climent-Pérez_
-Faculty of Science, Engineering and Computing
-Kingston University
-P [DOT] Climent [AT] kingston [DOT] ac [DOT] uk
+*_Pau Climent-Pérez_*  
+Faculty of Science, Engineering and Computing  
+Kingston University  
+P [DOT] Climent [AT] kingston [DOT] ac [DOT] uk  
