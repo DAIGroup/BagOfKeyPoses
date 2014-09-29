@@ -12,16 +12,16 @@ This method has successfully been employed for real-time recognition of human ac
 
 Details
 =======
-The method is explained in depth in Chaaraoui, A. A., Climent-Pérez, P., & Flórez-Revuelta, F. (2013). Silhouette-based human action recognition using sequences of key poses. Pattern Recognition Letters, 34(15), 1799-1807. http://dx.doi.org/10.1016/j.patrec.2013.01.021
+The method is explained in depth in _Chaaraoui, A. A., Climent-Pérez, P., & Flórez-Revuelta, F. (2013). Silhouette-based human action recognition using sequences of key poses. Pattern Recognition Letters, 34(15), 1799-1807. http://dx.doi.org/10.1016/j.patrec.2013.01.021_
 
-Latest results achieved on RGB and RBGD-based human action recognition are published in Chaaraoui, A. A., Padilla-López, J. R., Ferrández-Pastor, F. J., Nieto-Hidalgo, M., & Flórez-Revuelta, F. (2014). A Vision-Based System for Intelligent Monitoring: Human Behaviour Analysis and Privacy by Context. Sensors, 14(5), 8895-8925. http://dx.doi.org/10.3390/s140508895 
+Latest results achieved on RGB and RBGD-based human action recognition are published in _Chaaraoui, A. A., Padilla-López, J. R., Ferrández-Pastor, F. J., Nieto-Hidalgo, M., & Flórez-Revuelta, F. (2014). A Vision-Based System for Intelligent Monitoring: Human Behaviour Analysis and Privacy by Context. Sensors, 14(5), 8895-8925. http://dx.doi.org/10.3390/s140508895_
 
 License
 =======
 Distributed under the free software license Apache 2.0 License http://www.apache.org/licenses/LICENSE-2.0.html requiring  preservation of the copyright notice and disclaimer.
 
-If used in research work a citation to the following bibtex is required:
-
+**If used in research work a citation to the following bibtex is required:**
+```
   @article{Chaaraoui2013,
     title = "Silhouette-based human action recognition using sequences of key poses ",
     journal = "Pattern Recognition Letters ",
@@ -35,3 +35,4 @@ If used in research work a citation to the following bibtex is required:
     url = "http://www.sciencedirect.com/science/article/pii/S0167865513000342",
     author = "Alexandros Andre Chaaraoui and Pau Climent-Pérez and Francisco Flórez-Revuelta",
   }
+```
