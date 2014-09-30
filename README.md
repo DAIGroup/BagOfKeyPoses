@@ -61,7 +61,8 @@ P [DOT] Climent [AT] kingston [DOT] ac [DOT] uk
 Related publications
 ====================
 
-This method has also been used in the following publications successfully. Please send an email to the authors if you want to add your publication to this list.
+This method has also been used in the following publications. Please send an email to the authors if you want to add your publication to this list.
+
 
 _Chaaraoui, A. A., & Flórez Revuelta, F. (2014). Adaptive Human Action Recognition With an Evolving Bag of Key Poses. Autonomous Mental Development, IEEE Transactions on , vol.6, no.2, pp.139-152. http://dx.doi.org/10.1109/TAMD.2014.2315676_
 
