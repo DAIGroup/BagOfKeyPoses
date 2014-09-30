@@ -50,7 +50,7 @@ www.alexandrosandre.com
 Faculty of Science, Engineering and Computing  
 Kingston University   
 F [DOT] Florez [AT] kingston [DOT] ac [DOT] uk  
-http://www.dtic.ua.es/~florez/  
+http://staffnet.kingston.ac.uk/~ku48824/
 
 **_Pau Climent-Pérez_**  
 Faculty of Science, Engineering and Computing  
