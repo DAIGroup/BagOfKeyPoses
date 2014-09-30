@@ -66,7 +66,7 @@ This method has also been used in the following publications. Please send an ema
 
 _Chaaraoui, A. A., & Flórez Revuelta, F. (2014). Adaptive Human Action Recognition With an Evolving Bag of Key Poses. Autonomous Mental Development, IEEE Transactions on , vol.6, no.2, pp.139-152. http://dx.doi.org/10.1109/TAMD.2014.2315676_
 
-_Chaaraoui, A. A. (2014). Vision-based Recognition of Human Behaviour for Intelligent Environments. PhD. Thesis. University of Alicante, Spain._
+_Chaaraoui, A. A. (2014). Vision-based Recognition of Human Behaviour for Intelligent Environments. PhD. Thesis. University of Alicante, Spain. http://bit.ly/1aEXTrC_
 
 _Chaaraoui, A. A., & Flórez-Revuelta, F. (2014). Optimizing human action recognition based on a cooperative coevolutionary algorithm. Engineering Applications of Artificial Intelligence, 31, 116-125. http://dx.doi.org/10.1016/j.engappai.2013.10.003_
 
