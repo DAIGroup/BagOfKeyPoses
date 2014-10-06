@@ -81,9 +81,9 @@ IXMAS | Chaaraoui, A. A., Padilla-López, J. R., Ferrández-Pastor, F. J., Nieto
 DHA | Chaaraoui, A. A., Padilla-López, J. R., Ferrández-Pastor, F. J., Nieto-Hidalgo, M., & Flórez-Revuelta, F. (2014) | 95.2% | - | - | 99
 
 
-LOSO = Leave-one-sequence-out cross validation 
-LOAO = Leave-one-actor-out cross validation 
-LOVO = Leave-one-view-out cross validation
+LOSO = Leave-one-sequence-out cross validation  
+LOAO = Leave-one-actor-out cross validation  
+LOVO = Leave-one-view-out cross validation  
 
 
 
@@ -113,14 +113,14 @@ _Chaaraoui, A. A., Climent-Pérez, P., & Flórez-Revuelta, F. (2012). An efficie
 Employed datasets
 -----------------
 
-**Weizmann** 
+**Weizmann**  
 _Gorelick, L., Blank, M., Shechtman, E., Irani, M., & Basri, R. (2007). Actions as space-time shapes. Pattern Analysis and Machine Intelligence, IEEE Transactions on, 29(12), 2247-2253._
 
-**MuHAVi-8 and MuHAVi-14** 
+**MuHAVi-8 and MuHAVi-14**  
 _Singh, S., Velastin, S. A., & Ragheb, H. (2010, August). Muhavi: A multicamera human action video dataset for the evaluation of action recognition methods. In Advanced Video and Signal Based Surveillance (AVSS), 2010 Seventh IEEE International Conference on (pp. 48-55). IEEE._
 
-**IXMAS** 
+**IXMAS**  
 _Weinland, D., Ronfard, R., & Boyer, E. (2006). Free viewpoint action recognition using motion history volumes. Computer Vision and Image Understanding, 104(2), 249-257._
 
-**DHA** 
+**DHA**  
 _Lin, Y. C., Hu, M. C., Cheng, W. H., Hsieh, Y. H., & Chen, H. M. (2012, October). Human action recognition and retrieval using sole depth information. In Proceedings of the 20th ACM international conference on Multimedia (pp. 1053-1056). ACM._
