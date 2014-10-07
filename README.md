@@ -1,7 +1,7 @@
 BagOfKeyPoses
 =============
 
-Machine learning method based on a bag of key poses model and temporal alignment.
+Machine learning method based on a bag of key poses model and sequence alignment.
 
 
 
