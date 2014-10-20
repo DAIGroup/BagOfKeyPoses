@@ -706,7 +706,7 @@ namespace Util
         }
 
         /// <summary>
-        /// Returns an IEnumerable of integer values in the specified range that increase by stepSize.
+        /// Returns an IEnumerable of integer values that increase by stepSize in the specified range.
         /// </summary>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
@@ -721,7 +721,7 @@ namespace Util
         }
 
         /// <summary>
-        /// Returns an IEnumerable of integer values in the specified range that increase by stepSize.
+        /// Returns an IEnumerable of double values that increase by stepSize in the specified range.
         /// </summary>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
