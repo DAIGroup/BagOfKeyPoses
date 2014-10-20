@@ -439,7 +439,7 @@ namespace Util
             double median;
             List<double> rSorted = new List<double>(values);
             rSorted.Sort();
-
+            
             if (rSorted.Count % 2 == 1)
                 median = rSorted[rSorted.Count / 2];
             else
@@ -703,6 +703,36 @@ namespace Util
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Returns an IEnumerable of integer values in the specified range that increase by stepSize.
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="stepSize"></param>
+        /// <returns></returns>
+        public static IEnumerable<int> SteppedIterator(int startIndex, int endIndex, int stepSize)
+        {
+            for (int i = startIndex; i < endIndex; i = i + stepSize)
+            {
+                yield return i;
+            }
+        }
+
+        /// <summary>
+        /// Returns an IEnumerable of integer values in the specified range that increase by stepSize.
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="stepSize"></param>
+        /// <returns></returns>
+        public static IEnumerable<double> SteppedIterator(double startIndex, double endIndex, double stepSize)
+        {
+            for (double i = startIndex; i < endIndex; i = i + stepSize)
+            {
+                yield return i;
+            }
         }
     }
 }

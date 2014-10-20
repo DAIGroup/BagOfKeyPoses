@@ -1,0 +1,7 @@
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\bin\Debug\BagOfKeyPoses.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\bin\Debug\BagOfKeyPoses.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\bin\Debug\Util.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\bin\Debug\Util.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\obj\Debug\BagOfKeyPoses.csprojResolveAssemblyReference.cache
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\obj\Debug\BagOfKeyPoses.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\BagOfKeyPoses\obj\Debug\BagOfKeyPoses.pdb

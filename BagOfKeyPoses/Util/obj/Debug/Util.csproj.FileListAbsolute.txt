@@ -1,0 +1,5 @@
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\Util\bin\Debug\Util.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\Util\bin\Debug\Util.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\Util\obj\Debug\Util.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\Util\obj\Debug\Util.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\Util\obj\Debug\Util.csprojResolveAssemblyReference.cache

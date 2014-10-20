@@ -1,0 +1,9 @@
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\SampleUsage.exe
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\SampleUsage.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\BagOfKeyPoses.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\Util.dll
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\BagOfKeyPoses.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\bin\Release\Util.pdb
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\obj\x86\Release\SampleUsage.csprojResolveAssemblyReference.cache
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\obj\x86\Release\SampleUsage.exe
+D:\Research\GitHub\BagOfKeyPoses\BagOfKeyPoses\SampleUsage\obj\x86\Release\SampleUsage.pdb

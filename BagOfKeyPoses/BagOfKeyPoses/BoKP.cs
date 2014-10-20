@@ -102,7 +102,11 @@ namespace BagOfKeyPoses
         private KeyPose TestOne(double[] feature)
         {
             // Find closest keypose
-            CurrentKeyPose = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
+            // CurrentKeyPose = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
+
+            // *** TEMPORARILY NOT USING SUBSTITUTION SINCE WE USE ONE-CLASS LEARNING ***
+
+            CurrentKeyPose = new KeyPose("test", feature);
 
             return CurrentKeyPose;
         }
@@ -193,14 +197,64 @@ namespace BagOfKeyPoses
         /// <returns></returns>
         public string EvaluateSequence(List<double[]> sequence)
         {
+            double dist;
+            return EvaluateSequence(sequence, out dist);
+        }
+
+        /// <summary>
+        /// Evaluates a given sequence with DTW and returns the class label of the nearest neighbor sequence
+        /// </summary>
+        /// <param name="sequence"></param>
+        /// <returns></returns>
+        public string EvaluateSequence(List<double[]> sequence, out double distance)
+        {
             // Init sequence
             TestSequenceInit(sequence);
 
             // Evaluate sequence
             while (TestSequenceNext());
 
-            // Obtain result
-            return TestSequenceDTW();
+            // Obtain result            
+            return TestSequenceDTW(out distance);
+        }
+
+        /// <summary>
+        /// Evaluates a given sequence returns the class labels of the nearest neighbor key poses
+        /// </summary>
+        /// <param name="sequence">Input sequence of features</param>
+        /// <param name="threshold">Allowed distance threshold for normal behaviours</param>
+        /// <param name="anom_perc">Percentage of the sequence that has to be abnormal to consider the sequence abnormal</param>
+        /// <param name="distances">Distances of each nearest neighbour key poses assignation</param>
+        /// <param name="recognitions">Frame-based result of the recognition</param>
+        /// <returns>Whether or not the sequence presents signifcant anomalies</returns>
+        public bool EvaluatePoses(List<double[]> sequence, double threshold, double anom_perc, out List<double> distances, out List<bool> recognitions)
+        {
+            int max_anom_frames = (int)(sequence.Count * anom_perc);
+            int anom_frames = 0;
+            recognitions = new List<bool>();
+            distances = new List<double>();
+            
+            // Evaluate sequence.
+            foreach (var feature in sequence)
+            {
+                KeyPose nnkp = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
+                distances.Add(nnkp.MatchedDistance);
+
+                if (nnkp.MatchedDistance > threshold)
+                {
+                    ++anom_frames;
+                    recognitions.Add(true);
+                }
+                else
+                {
+                    recognitions.Add(false);
+                }
+            }
+            
+            if (anom_frames >= max_anom_frames)
+                return true;
+
+            return false;
         }
 
         /// <summary>
