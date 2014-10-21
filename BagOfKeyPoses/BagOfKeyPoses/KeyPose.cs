@@ -34,7 +34,7 @@ namespace BagOfKeyPoses
         private static readonly object lockID = new object();       // Corresponding concurrency lock
 
         // Public
-        public double[] Distances;                          // S distances to the centroid, from 180º to 179º, counter-clockwise
+        public double[] Distances;                          // S distances or feature elements
         public string ClassLabel;                           // Class label
         public double Weight;                               // Learned weight (percentual relation of within class assignments)
         public string ID;                                   // Database ID (for viewing purposes)
