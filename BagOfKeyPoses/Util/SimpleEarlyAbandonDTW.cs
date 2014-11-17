@@ -22,7 +22,7 @@ using System.Collections;
 namespace Util
 {
     /// <summary>
-    /// Template-based Dynamic-Time-Warping implementation with upper bound
+    /// Template-based Dynamic-Time-Warping implementation with upper bound.
     /// BASED ON: Junkui, L., & Yuanzhen, W. (2009). Early abandon to accelerate exact dynamic time warping. 
     /// Int. Arab J. Inf. Technol., 6(2), 144-152.www.ccis2k.org/iajit/PDF/vol.6,no.2/6EAAEDTW144.pdf
     /// </summary>
@@ -37,39 +37,6 @@ namespace Util
         ArrayList pathY;
         ArrayList distanceList;
         double sum;
-
-        public static double SquareRoot(double x)
-        {
-            if (x == 0) return 0;
-
-            double r = x / 2; // this is inefficient, but I can't find a better way
-            // to get a close estimate for the starting value of r
-            double last = 0;
-            int maxIters = 100;
-
-            double eps = 1e-3;  // pick any small number
-            
-            for (int i = 0; i < maxIters; i++)
-            {
-                r = (r + x / r) / 2;
-            
-                if (Math.Abs(r-last) < eps) break;
-        
-                last = r;
-            }
-
-            return r;
-        }
-
-        /*float SquareRoot(float x)
-        {
-            float xhalf = 0.5f * x;
-            int i = BitConverter.ToInt32(BitConverter.GetBytes(x), 0);
-            i = 0x5f3759df - (i >> 1);
-            x = BitConverter.ToSingle(BitConverter.GetBytes(i), 0);
-            x = x * (1.5f - xhalf * x * x);
-            return 1/x;
-        }*/
 
         public SimpleEarlyAbandonDTW(List<T> x_query_test, List<T> _y_ref_train)
         {
@@ -185,13 +152,12 @@ namespace Util
                         if (f[i, j] > minDistance)
                             f[i, j] = double.MaxValue;
 
-                        else overflow = false; // If any of the row cells doesn't overflow, the process continues
+                        else overflow = false; // If none of the row cells overflows, the process continues.
                     }
                 }
 
                 if (overflow)
                 {
-                    //Console.WriteLine("Overflow i=" + i + " y=" + (y.Count - 1));
                     break;
                 }
             }
@@ -214,7 +180,7 @@ namespace Util
             for (int i = 1; i <= x.Count; ++i)
                 f[i, 0] = Double.MaxValue;
 
-            // Set first row to 0 => Which means that the beginning of the Y sequence doesn't need to be aligned (everything could match with its last frame)
+            // Set first row to 0 => Which means that the beginning of the Y sequence doesn't need to be aligned (anything could match with its last frame)
             for (int i = 1; i <= y.Count; ++i)
                 f[0, i] = 0;
 
@@ -235,7 +201,7 @@ namespace Util
                     if (f[i, j - 1] < v)
                         v = f[i, j - 1];
 
-                    if (v > minDistance) // If it already overflows, it shouldn't be considered in the future
+                    if (v > minDistance) // If it already overflows, it shouldn't be considered in the future.
                         f[i, j] = double.MaxValue;
                     else
                     {
@@ -245,16 +211,15 @@ namespace Util
 
                         f[i, j] = v + distance[i - 1, j - 1];
 
-                        if (f[i, j] > minDistance) // If it already overflows, it shouldn't be considered in the future
+                        if (f[i, j] > minDistance) // If it already overflows, it shouldn't be considered in the future.
                             f[i, j] = double.MaxValue;
 
-                        else overflow = false; // If any of the row cells doesn't overflow, the process continues
+                        else overflow = false; // If none of the row cells overflows, the process continues.
                     }
                 }
 
-                if (overflow) // A whole row overflows, which means that this is not a better match, the alignment cost can only increase
+                if (overflow) // A whole row overflows, which means that this is not a better match, the alignment cost can only increase.
                 {
-                    //Console.WriteLine("Overflow i=" + i + " y=" + (y.Count - 1));
                     break;
                 }
             }
@@ -264,8 +229,8 @@ namespace Util
 
             else
             {
-                // Look for the best alignment, without considering that the last frames need to be aligned
-                // therefore both the last row and column need to be checked
+                // Look for the best alignment, without considering that the last frames need to be aligned,
+                // therefore both the last row and column need to be checked.
                 double best = double.MaxValue;
                 int row = 0, column = 0;
 
