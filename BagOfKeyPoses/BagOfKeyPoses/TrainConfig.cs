@@ -44,9 +44,9 @@ namespace BagOfKeyPoses
 
 
         // Public
-        public int InitialK;                                            // Number of clusters and therefore maximum number of key poses per class
+        public int InitialK = 10;                                       // Number of clusters and therefore maximum number of key poses per class
         public AssociativeArray<string, int> K;                         // Specific K for each action class
-        public int FeatureSize;                                                   // Feature size
+        public int FeatureSize;                                         // Feature size
         public List<string> Sources;                                    // Fused feature sources (e.g. views)
         public List<string> ClassLabels;                                // Classes used (e.g. actions)
         public bool UseSummarization = false;                           // Wether or not key pose sequences should be summarized
