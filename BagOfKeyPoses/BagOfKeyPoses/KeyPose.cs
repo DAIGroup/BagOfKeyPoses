@@ -137,7 +137,7 @@ namespace BagOfKeyPoses
         public static KeyPose ClosestAmongAll(double[] distances, Dictionary<string, List<KeyPose>> keyPoses, TrainConfig config, bool pruning = false)
         {
             KeyPose closestKP = null;
-            double minDistance = double.MaxValue; // Upper Bound
+            double minDistance = double.MaxValue;
 
             foreach (KeyValuePair<string, List<KeyPose>> clusters in keyPoses) // For each action
             {
@@ -145,13 +145,13 @@ namespace BagOfKeyPoses
                 {
                     bool better = true;
                     double d = 0.0;
-
+                                        
                     if (pruning)
                         d = Functions.ManhattanDistance(distances, kp.Distances, minDistance, out better);
                     else
                         d = Functions.ManhattanDistanceNormalized(distances, kp.Distances);
-                    
-                    if (better && d < minDistance)
+
+                    if (closestKP == null || (better && d < minDistance))
                     {
                         minDistance = d;
                         closestKP = kp;
@@ -188,7 +188,7 @@ namespace BagOfKeyPoses
                 {
                     double d = Functions.ManhattanDistanceNormalized(distances, kp.Distances);
 
-                    if (d < minDistance)
+                    if (!closestKPs.ContainsKey(action) || d < minDistance)
                     {
                         minDistance = d;
                         closestKPs[action] = kp;
