@@ -165,7 +165,7 @@ namespace Util
 
         /// <summary>
         /// Returns Euclidean distance
-        /// Optimized to support Branch & Bound (when better = false, the returned value should be ignored)
+        /// Optimized to support lower bound (when better = false, the returned value should be ignored)
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -222,6 +222,79 @@ namespace Util
                 d = double.MaxValue - 1;
 
             return Math.Sqrt(d);
+        }
+
+        /// <summary>
+        /// Returns the Chi-Square distance.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static double ChiSquareDistance(double[] a, double[] b)
+        {
+            if (a.Length != b.Length)
+                throw new Exception("(Function::ChiSquareDistance) In order to compare vectors they should have the same size.");
+
+            int length = a.Length;
+            double dist = 0.0;
+
+            for (int i = 0; i < length; ++i)
+            {
+                if (a[i] == 0 && b[i] == 0) continue;
+
+                dist += (a[i] - b[i]) * (a[i] - b[i]) / a[i] + b[i];
+            }
+
+            dist /= 2;
+
+            return dist;
+        }
+
+        /// <summary>
+        /// Returns the Bhattacharyya coefficient (amount of overlap).
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static double BhattacharyyaCoefficient(double[] a, double[] b)
+        {
+            if (a.Length != b.Length)
+                throw new Exception("(Function::BhattacharyyaDistance) In order to compare vectors they should have the same size.");
+
+            int length = a.Length;
+            double coeff = 0.0;
+
+            for (int i = 0; i < length; ++i)
+            {
+                coeff += Math.Sqrt(a[i] * b[i]);
+            }
+
+            return coeff;
+        }
+
+        /// <summary>
+        /// Returns the Kullback-Leibler divergence (from a to b, not symmetric).
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static double KullbackLeiblerDivergence(double[] a, double[] b)
+        {
+            if (a.Length != b.Length)
+                throw new Exception("(Function::KullbackLeiblerDivergence) In order to compare vectors they should have the same size.");
+
+            int length = a.Length;
+            double klDiv = 0.0;
+
+            for (int i = 0; i < length; ++i)
+            {
+                if (a[i] == 0) continue;
+                if (b[i] == 0) continue;
+
+                klDiv += a[i] * Math.Log(a[i] / b[i]);
+            }
+
+            return klDiv / Math.Log(2);
         }
 
         /// <summary>
@@ -699,6 +772,51 @@ namespace Util
                 {
                     result = false;
                     break;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 2D Convolution for 1D arrays.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dimX"></param>
+        /// <param name="dimY"></param>
+        /// <param name="kernel"></param>
+        /// <returns></returns>
+        public static double[] Convolution2D(double[] source, int dimX, int dimY, double[,] kernel)
+        {
+            double kSize = Math.Sqrt(kernel.Length);
+
+            if (kernel.Length < 9 || kSize % 1 != 0 || kSize % 2 == 0)
+                throw new Exception("(Function::Convolution2D) Invalid kernel.");
+
+            double[] result = new double[source.Length];            
+            int halfKSize = (int) kSize / 2;
+
+            for (int i = 0; i < dimX; ++i)
+            {
+                for (int j = 0; j < dimY; ++j)
+                {
+                    double value = 0.0;
+                    int pos = i * dimY + j;
+
+                    for (int ki = -halfKSize; ki <= halfKSize; ++ki)
+                    {
+                        for (int kj = -halfKSize; kj <= halfKSize; ++kj)
+                        {
+                            if (i + ki < 0 || i + ki >= dimX)
+                                break;
+                            if (j + kj < 0 || j + kj >= dimY)
+                                break;
+
+                            value += kernel[halfKSize + ki, halfKSize + kj] * source[(i + ki) * dimY + (j + kj)];
+                        }
+                    }
+
+                    result[pos] = value;
                 }
             }
 
