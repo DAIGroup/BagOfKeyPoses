@@ -49,7 +49,8 @@ namespace BagOfKeyPoses
         public int FeatureSize;                                         // Feature size
         public List<string> Sources;                                    // Fused feature sources (e.g. views)
         public List<string> ClassLabels;                                // Classes used (e.g. actions)
-        public bool UseSummarization = false;                           // Wether or not key pose sequences should be summarized
+        public bool CalcKPWeightsAndSeqs = true;                        // Whether or not key pose weights and key pose sequences should be obtained
+        public bool UseSummarization = false;                           // Whether or not key pose sequences should be summarized
         public bool UseSourceWeights = false;                           // Whether or not source (views) weights are employed
         public bool UseZones = false;                                   // Whether or not class zones should be used
         public AssociativeMatrix<string, string, double> SourceWeights; // Weight of each source (view) and class (action)

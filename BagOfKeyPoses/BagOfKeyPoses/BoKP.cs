@@ -80,7 +80,7 @@ namespace BagOfKeyPoses
             try
             {            
                 // Learn Key Poses, key pose weights and key pose sequences
-                Config.KeyPoses = KeyPoseWeighter.DoLearn(trainData, Config, bgw, true, keyPoses);
+                Config.KeyPoses = KeyPoseWeighter.DoLearn(trainData, Config, bgw, Config.Params.CalcKPWeightsAndSeqs, keyPoses);
                 Config.KeyPoseDistanceCache = new AssociativeMatrix<KeyPose, KeyPose, double>();
 
                 if(Config.Params.UseZones)
