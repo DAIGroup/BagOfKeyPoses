@@ -161,7 +161,7 @@ namespace BagOfKeyPoses
 
                     foreach (double[] feature in sequence) // For each frame
                     {
-                        KeyPose closestKP = KeyPose.ClosestAmongAll(feature, keyPoses, config);
+                        KeyPose closestKP = KeyPose.ClosestAmongAll(feature, keyPoses, config, true);
 
                         if (closestKP.ClassLabel.Equals(sequences.Key))
                             closestKP.WithinClass++;

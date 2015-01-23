@@ -145,7 +145,7 @@ namespace BagOfKeyPoses
                 {
                     bool better = true;
                     double d = 0.0;
-                                        
+                                
                     if (pruning)
                         d = Functions.ManhattanDistance(distances, kp.Distances, minDistance, out better);
                     else

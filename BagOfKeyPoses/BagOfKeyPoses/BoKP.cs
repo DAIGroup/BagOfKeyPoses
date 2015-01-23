@@ -106,7 +106,6 @@ namespace BagOfKeyPoses
             // CurrentKeyPose = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
 
             // *** TEMPORARILY NOT USING SUBSTITUTION SINCE WE USE ONE-CLASS LEARNING ***
-
             CurrentKeyPose = new KeyPose("test", feature);
 
             return CurrentKeyPose;
@@ -160,20 +159,23 @@ namespace BagOfKeyPoses
             {
                 foreach (KeyPoseSequence trainSequence in trainSequences.Value) // For each sequence
                 {
-                    // Simple DTW
-                    //SimpleDTW<KeyPose> dtw = new SimpleDTW<KeyPose>(matchedTestSequence.Items, trainSequence.Items, new KeyPoseComparison(Config, keyPoseDistanceCache, trainSequence.Action));
-                    //dtw.ComputeDTW();
-
-                    // Early Abandon DTW
-                    SimpleEarlyAbandonDTW<KeyPose> dtw = new SimpleEarlyAbandonDTW<KeyPose>(MatchedTestSequence.Items, trainSequence.Items);
-                    dtw.ComputeDTW(new KeyPoseComparison(Config, trainSequence.ClassLabel), minDistance);
-
-                    double d = dtw.GetSum();
-
-                    if (d < minDistance)
+                    if (trainSequence.Items.Count > 0)
                     {
-                        minDistance = d;
-                        action = trainSequences.Key;
+                        // Simple DTW
+                        //SimpleDTW<KeyPose> dtw = new SimpleDTW<KeyPose>(matchedTestSequence.Items, trainSequence.Items, new KeyPoseComparison(Config, keyPoseDistanceCache, trainSequence.Action));
+                        //dtw.ComputeDTW();
+
+                        // Early Abandon DTW
+                        SimpleEarlyAbandonDTW<KeyPose> dtw = new SimpleEarlyAbandonDTW<KeyPose>(MatchedTestSequence.Items, trainSequence.Items);
+                        dtw.ComputeDTW(new KeyPoseComparison(Config, trainSequence.ClassLabel), minDistance);
+
+                        double d = dtw.GetSum();
+
+                        if (d < minDistance)
+                        {
+                            minDistance = d;
+                            action = trainSequences.Key;
+                        }
                     }
                 }
             }

@@ -226,7 +226,7 @@ namespace Util
 
         /// <summary>
         /// Returns true if the Euclidean Distance among the centers is below Epsilon
-        /// (Using Euclidean distance because we want 'equal' cluster centers, therefore empty dimensions are considered.)
+        /// (Using normal distance because we want 'equal' cluster centers, therefore empty dimensions are considered.)
         /// </summary>
         /// <param name="oldCenter"></param>
         /// <param name="newCenter"></param>
