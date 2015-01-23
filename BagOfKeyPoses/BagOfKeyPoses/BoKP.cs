@@ -227,13 +227,11 @@ namespace BagOfKeyPoses
         }
 
         /// <summary>
-        /// Evaluates a given sequence based only on its poses and returns the class labels of the nearest neighbour key poses.
+        /// Evaluates a given sequence based only on its features and returns the class labels and distances of the 
+        /// nearest neighbour key poses.
         /// </summary>
         /// <param name="sequence">Input sequence of features</param>
-        /// <param name="threshold">Allowed distance threshold for normal behaviours</param>
-        /// <param name="anom_perc">Percentage of the sequence that has to be abnormal to consider the sequence abnormal</param>
-        /// <param name="recognitions">Distance of the nearest neighbour key pose of each element</param>
-        /// <returns>Whether or not the sequence presents significant anomalies (whether or not anom_perc is reached)</returns>
+        /// <param name="distances">Distances of the nearest neighbour key poses</param>
         public void EvaluatePoses(List<double[]> sequence, out List<double> distances)
         {
             distances = new List<double>();
