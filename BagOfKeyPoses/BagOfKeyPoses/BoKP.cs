@@ -102,11 +102,16 @@ namespace BagOfKeyPoses
         /// <returns></returns>
         private KeyPose TestOne(double[] feature)
         {
-            // Find closest keypose
-            // CurrentKeyPose = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
-
-            // *** TEMPORARILY NOT USING SUBSTITUTION SINCE WE USE ONE-CLASS LEARNING ***
-            CurrentKeyPose = new KeyPose("test", feature);
+            if (!Config.Params.OneClassLearning)
+            {
+                // Substitute with nearest neighbour key pose
+                CurrentKeyPose = KeyPose.ClosestAmongAll(feature, Config.KeyPoses, Config, true);
+            }
+            else
+            {
+                // Test feature could belong to an unknown class
+                CurrentKeyPose = new KeyPose("test", feature);
+            }
 
             return CurrentKeyPose;
         }

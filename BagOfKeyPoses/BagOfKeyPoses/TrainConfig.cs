@@ -49,6 +49,7 @@ namespace BagOfKeyPoses
         public int FeatureSize;                                         // Feature size
         public List<string> Sources;                                    // Fused feature sources (e.g. views)
         public List<string> ClassLabels;                                // Classes used (e.g. actions)
+        public bool OneClassLearning = false;                           // Use one class learning for instance for anomaly detection.
         public bool CalcKPWeightsAndSeqs = true;                        // Whether or not key pose weights and key pose sequences should be obtained
         public bool UseSummarization = false;                           // Whether or not key pose sequences should be summarized
         public bool UseSourceWeights = false;                           // Whether or not source (views) weights are employed
